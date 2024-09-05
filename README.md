@@ -25,8 +25,6 @@ JavaScript para interatividade.
 
 Python para análise de dados.
 
-SQL para manipulação de banco de dados.
-
 Outras linguagens conforme o desafio avança!
 ##
 # 📈 Metas
