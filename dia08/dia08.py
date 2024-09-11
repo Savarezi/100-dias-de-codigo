@@ -18,4 +18,4 @@ while True:
 # Chamar a função para gerar a tabuada
 gerar_tabuada(numero)
 
-print("\nTabuada gerada com sucesso!")
+print("\nTabuada gerada com sucesso")
