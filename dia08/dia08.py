@@ -1,36 +1,21 @@
-
-
-# TABUADA DE UM NUMERO FORNECIDO PELO USUARIO
-
-
+# Função para gerar e exibir a tabuada de um número fornecido
 def gerar_tabuada(numero):
-    print (f"Tabuada do {numero} ")
-
-    for  i in range (1,11):
-        resultado = numero * i  # i = intereção
+    print(f"\nTabuada do {numero}:")
+    
+    # Gerar a tabuada de 1 a 10
+    for i in range(1, 11):
+        resultado = numero * i
         print(f"{numero} x {i} = {resultado}")
 
-# solicitar ao usuario que insira uma numero
+# Solicitar ao usuário que insira um número válido
+while True:
+    try:
+        numero = int(input("Digite um número para gerar a tabuada: "))
+        break  # Se o número for válido, sair do loop
+    except ValueError:
+        print("Entrada inválida! Por favor, digite um número inteiro.")
 
-numero = (int (input("Digite um número para gerar a tabuada :")))
-
-# chama a função para gerar a tabuada
-
+# Chamar a função para gerar a tabuada
 gerar_tabuada(numero)
 
-
-print("Tabuada gerada com sucesso")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print("\nTabuada gerada com sucesso!")
