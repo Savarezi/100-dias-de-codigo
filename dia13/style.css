@@ -1,0 +1,52 @@
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    color:blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Adicionado para evitar margens padrão */
+}
+
+.container {
+    width: 400px;
+    height: 400px;
+    perspective: 800px;
+}
+
+.card {
+    height: 100%; /* Ajustado para usar toda a altura do container */
+    width: 100%; /* Ajustado para usar toda a largura do container */
+    position: relative;
+    transition: transform 1.5s ease; /* Melhorado o tempo e suavidade da transição */
+    transform-style: preserve-3d;
+}
+
+.front-side, .back-side {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px black;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front-side {
+    background-size: cover; /* Corrigido o ajuste de background */
+    background-image: url('imagem/inteligencia-artificial-1024x617.jpg'); /* Adicione a URL da imagem aqui */
+}
+
+.back-side {
+    background-color: black;
+    transform: rotateY(180deg); /* Corrigido o ângulo de rotação para 180deg */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container:hover > .card {
+    cursor: pointer;
+    transform: rotateY(180deg); /* Transição suave ao girar o cartão */
+}
