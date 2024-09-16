@@ -34,7 +34,7 @@ body {
 
 .front-side {
     background-size: cover; /* Corrigido o ajuste de background */
-    background-image: url('imagem/inteligencia-artificial-1024x617.jpg'); /* Adicione a URL da imagem aqui */
+    background-image: url("imagem/images.jpeg"); /* Adicione a URL da imagem aqui */
 }
 
 .back-side {
