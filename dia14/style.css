@@ -1,0 +1,57 @@
+
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Fundo com gradiente */
+    font-family: 'Roboto', sans-serif; /* Fonte Roboto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #f0f0f0;
+}
+
+/* Estilo do relógio digital */
+.digital-clock {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px 60px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Animação ao passar o mouse */
+.digital-clock:hover {
+    transform: scale(1.05); /* Aumenta levemente o tamanho */
+}
+
+#clock {
+    font-size: 64px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #6a0dad; /* Tom de roxo mais vibrante */
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(106, 13, 173, 0.7); /* Sombra mais definida */
+}
+
+/* Tornando o relógio responsivo */
+@media (max-width: 768px) {
+    #clock {
+        font-size: 48px;
+        padding: 15px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    #clock {
+        font-size: 32px;
+        padding: 10px 20px;
+    }
+}
