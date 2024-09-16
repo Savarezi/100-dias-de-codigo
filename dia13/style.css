@@ -2,7 +2,7 @@
 body {
     height: 100vh;
     overflow: hidden;
-    color:blueviolet;
+    color:beige;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,7 +34,7 @@ body {
 
 .front-side {
     background-size: cover; /* Corrigido o ajuste de background */
-    background-image: url("imagem/images.jpeg"); /* Adicione a URL da imagem aqui */
+    background-image: url("imagem/AI-trabalho-1\ \(1\).gif"); /* Adicione a URL da imagem aqui */
 }
 
 .back-side {
