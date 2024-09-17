@@ -1,4 +1,3 @@
-
 /* Estilo global */
 * {
     margin: 0;
@@ -13,8 +12,38 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
     color: #f0f0f0;
+    position: relative;
 }
+/* Fundo com estrelas piscando */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('imagens/stars-1837306_1280.jpg') repeat; /* Substitua pela URL da sua imagem */
+    background-size: cover; /* Garante que a imagem cubra o fundo */
+    z-index: 0;
+    opacity: 0.2;
+    animation: twinkling 5s infinite ease-in-out;
+}
+
+/* Animação de estrelas piscando */
+@keyframes twinkling {
+    0% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+    100% { opacity: 0.2; }
+}
+
+
+
+
+
+
+
 
 /* Estilo do relógio digital */
 .digital-clock {
@@ -24,21 +53,41 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
     transition: transform 0.2s ease-in-out;
+    z-index: 1;
+    position: relative;
 }
 
 /* Animação ao passar o mouse */
 .digital-clock:hover {
-    transform: scale(1.05); /* Aumenta levemente o tamanho */
+    transform: scale(1.1); /* Aumenta levemente o tamanho */
 }
 
+/* Estilo do relógio */
 #clock {
     font-size: 64px;
     font-weight: bold;
-    color:blanchedalmond;
+    color: blanchedalmond;
     background-color: #6a0dad; /* Tom de roxo mais vibrante */
     padding: 20px 40px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(106, 13, 173, 0.7); /* Sombra mais definida */
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* Animação de pulso no relógio */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(106, 13, 173, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 25px rgba(106, 13, 173, 1);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(106, 13, 173, 0.7);
+    }
 }
 
 /* Tornando o relógio responsivo */
