@@ -1,0 +1,57 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização do corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-image 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+/* Imagem de fundo para o tema claro (dia) */
+body[data-theme="light"] {
+    background-image: url("imagem/istockphoto-538449165-612x612.jpg"); /* Substitua por sua imagem de dia */
+    background-color: #f0f0f0; /* Cor de fundo para o tema claro */
+}
+
+/* Imagem de fundo para o tema escuro (noite) */
+body[data-theme="dark"] {
+    background-image: url("imagem/pexels-photo-399973.webp"); /* Substitua por sua imagem de noite */
+    background-color: #1c1c1c; /* Cor de fundo para o tema escuro */
+}
+
+/* Estilização do botão de alternância de tema */
+.theme-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.theme-btn:hover {
+    background-color: #555;
+}
+
+/* Ocultar o checkbox */
+input[type="checkbox"] {
+    display: none;
+}
