@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black
+}
+
+header {
+    text-align: center;
+    background-color:fuchsia;
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.mg-slider {
+    position: relative;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.slide {
+    display: none;
+    text-align: center;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.info h2, .info p {
+    margin: 10px 0;
+}
+
+.info h2 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.btn-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.btn.active {
+    background-color: #333;
+}
