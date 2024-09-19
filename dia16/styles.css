@@ -1,0 +1,64 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:black;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    background-color: #444;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    resize: none;
+    font-size: 16px;
+    margin-bottom: 15px;
+    background-color: #222;
+    color: #fff;
+    outline: none;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+textarea::placeholder {
+    color: #999;
+}
+
+p {
+    font-size: 18px;
+}
+
+.count {
+    font-weight: bold;
+    color: #76c7c0;
+    font-size: 22px;
+}
+
+/* Efeito de foco no textarea */
+textarea:focus {
+    border: 2px solid #76c7c0;
+    box-shadow: 0 0 10px rgba(118, 199, 192, 0.7);
+}
