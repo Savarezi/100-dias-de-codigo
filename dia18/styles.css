@@ -1,0 +1,108 @@
+
+/* Estilo global */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1c1c1c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilo do título */
+h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Estilo da logo */
+.logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+/* Container principal para entrada de dados */
+.container-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Barra de ajuste de tamanho da senha */
+input[type="range"] {
+    width: 200px;
+    margin-top: 10px;
+    -webkit-appearance: none;
+    background: #1e90ff;
+    height: 5px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Botão de geração da senha */
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Estilo para a área de senha gerada */
+.container-password {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #333;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para a senha gerada */
+#password {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    background-color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+}
+
+.tooltip {
+    margin-top: 10px;
+    display: block;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+.tooltip:hover {
+    text-decoration: underline;
+}
