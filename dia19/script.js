@@ -1,10 +1,18 @@
+
 const cells = document.querySelectorAll('.cell');
 const statusDisplay = document.querySelector('.status');
 const restartButton = document.getElementById('restartButton');
+const startGameButton = document.getElementById('startGameButton');
+const player1NameInput = document.getElementById('player1Name');
+const player1SymbolSelect = document.getElementById('player1Symbol');
+const player2NameInput = document.getElementById('player2Name');
+const player2SymbolSelect = document.getElementById('player2Symbol');
 
 let currentPlayer = 'X';
 let gameState = ["", "", "", "", "", "", "", "", ""];
-let isGameActive = true;
+let isGameActive = false;
+let player1 = { name: '', symbol: 'X' };
+let player2 = { name: '', symbol: 'O' };
 
 const winningConditions = [
   [0, 1, 2],
@@ -17,11 +25,9 @@ const winningConditions = [
   [2, 4, 6]
 ];
 
-const winningMessage = () => `Jogador ${currentPlayer} venceu!`;
+const winningMessage = (player) => `${player.name} (${player.symbol}) venceu!`;
 const drawMessage = () => `Empate!`;
-const currentPlayerTurn = () => `É a vez do Jogador ${currentPlayer}`;
-
-statusDisplay.innerHTML = currentPlayerTurn();
+const currentPlayerTurn = (player) => `É a vez de ${player.name} (${player.symbol})`;
 
 function handleCellClick(e) {
   const clickedCell = e.target;
@@ -54,7 +60,7 @@ function checkResult() {
   }
 
   if (roundWon) {
-    statusDisplay.innerHTML = winningMessage();
+    statusDisplay.innerHTML = winningMessage(currentPlayer === player1.symbol ? player1 : player2);
     isGameActive = false;
     return;
   }
@@ -65,18 +71,36 @@ function checkResult() {
     return;
   }
 
-  currentPlayer = currentPlayer === "X" ? "O" : "X";
-  statusDisplay.innerHTML = currentPlayerTurn();
+  currentPlayer = currentPlayer === player1.symbol ? player2.symbol : player1.symbol;
+  statusDisplay.innerHTML = currentPlayerTurn(currentPlayer === player1.symbol ? player1 : player2);
 }
 
 function restartGame() {
-  currentPlayer = 'X';
+  currentPlayer = player1.symbol;
   gameState = ["", "", "", "", "", "", "", "", ""];
   isGameActive = true;
 
-  statusDisplay.innerHTML = currentPlayerTurn();
+  statusDisplay.innerHTML = currentPlayerTurn(player1);
   cells.forEach(cell => cell.innerHTML = "");
+}
+
+function startGame() {
+  player1.name = player1NameInput.value || "Jogador 1";
+  player1.symbol = player1SymbolSelect.value;
+
+  player2.name = player2NameInput.value || "Jogador 2";
+  player2.symbol = player2SymbolSelect.value;
+
+  if (player1.symbol === player2.symbol) {
+    alert("Os jogadores não podem ter o mesmo símbolo!");
+    return;
+  }
+
+  currentPlayer = player1.symbol;
+  isGameActive = true;
+  statusDisplay.innerHTML = currentPlayerTurn(player1);
 }
 
 cells.forEach(cell => cell.addEventListener('click', handleCellClick));
 restartButton.addEventListener('click', restartGame);
+startGameButton.addEventListener('click', startGame);
